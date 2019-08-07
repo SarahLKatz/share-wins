@@ -23,6 +23,22 @@
   color: #61dafb;
 }
 
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.container button {
+  width: 25vw;
+  margin: 0 auto;
+}
+
+/* .container form {
+  width: 25vw;
+  margin: 0 auto;
+} */
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

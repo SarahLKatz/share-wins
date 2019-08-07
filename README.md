@@ -1,68 +1,39 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Share Wins
 
-## Available Scripts
+#### About This Project
+Most important question: what is this project?
 
-In the project directory, you can run:
+(Once the MVP is done and deployed) Share Wins is (/will be) a website that's all about sharing our wins with random internet strangers. When you visit the live site at (website will be included here once it's deployed and I decide if I want to buy a domain name for it), you will see a win that someone has anonymously submitted to the site, and you get the joy of celebrating that win!
 
-### `npm start`
+If you have a win that you want the community to celebrate, you can input that win, and it will join the collection of wins that can be displayed on the site. Someday soon a user may see your win and celebrate with you!
 
-Runs the app in the development mode.<br>
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+#### To-Do Items
+- [ ] Tests. Seriously, let's get some tests in here.
+- [ ] Hooking Up a Database. Because right now the only wins that can display are ones I hard-coded in, and inputted wins go nowhere. My plan was to hook it up to a Firebase real-time database, but I'm open to other ideas.
+- [ ] Additional Styling. This could be much prettier. Right now I'm using Material UI because I wanted styles *fast*, but if someone wants to scrap that and build the styles from scratch ... I'm cool with that.
+- [ ] Sanitizing input. Right now someone could DROP TABLE; this and I wouldn't notice. We should probably work on changing that. I'm not cool deploying this to the internets with this DROP TABLE; situation going on.
+- [ ] Deploying to the Internet. We should probably get most of the above done first, but ... I would like this to go live at some point.
+##### Possible Additional Features
+- [ ] Users? My initial idea was to have wins associated with users somehow, so that you can congratulate someone on their win, but then it seemed like too much work. Would be cool with someone introducing that if they want to do the work, but it would have to be early before we start putting all the anonymous wins out there (or we could do option of anonymous or submitted by user...)
+- [ ] Likes? Do we want to give people the ability to "like" wins? Not sure the point of this would be, because it's not like you'll see who liked your win (unless we set up users), but I dunno...
+- [ ] Anything else you want to add
 
-The page will reload if you make edits.<br>
-You will also see any lint errors in the console.
+#### About Contributing
+##### Getting Set Up:
+*Things You Need To Have Installed To Run This Repo*: [Node](https://nodejs.org/en/download/), package manager (npm or [yarn](https://yarnpkg.com/en/) - I use yarn). If you use Mac OS and have homebrew installed, Node and yarn can both be installed using homebrew - `brew install node` and `brew install yarn` (which actually also installs Node). Whatever method you use, npm comes installed with node. For other operating systems, you can follow instructions at the links above.
 
-### `npm test`
+Once you have node installed, getting the app up and running to work on the repo is super simple. Steps:
+1. Fork the repository
+2. Clone the repository to your local machine
+3. Install dependencies using `yarn` or `npm install` (I used yarn, so there's a `yarn.lock` but no `package-lock.json` ... so if you prefer npm, be aware of that)
+4. Run `npm start` to start the app!
 
-Launches the test runner in the interactive watch mode.<br>
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Everything is currently written in JavaScript and React, and I'd like to keep it that way. If you want to contribute but those aren't really your jam, let me know and I'll see if we can find a way to get your contributions in without you having to learn a new language/framework or me having to convert work from another language to javascript.
 
-### `npm run build`
+##### What/How To Contribute
+The first thing to do is decide what you want to work on. See above for suggestions/things that need to be done for MVP, but you can also throw in something that's not listed there. Once you've decided what to work on, raise an issue (if one hasn't already been raised) and mention there that you're working on it (so that I know that I don't have to). Make sure to include test coverage, and if you're working on an issue that's listed in the README, include an edit to the README to take that off the "To-Do" list.
 
-Builds the app for production to the `build` folder.<br>
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Once your work is done, it's time to get it into the repo. Put in a pull request (to master), and when I get a chance, I'll pull down your work, run it (and the tests) to make sure it does what it's supposed to, and hopefully merge it! If I see something that doesn't work or I want changed, I'll leave you a comment - be sure to ask questions if you disagree with my comment or it doesn't make sense!
 
-The build is minified and the filenames include the hashes.<br>
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (Webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
+#### List of Contributors
+Sarah Katz [Github](https://github.com/sarahlkatz) [Twitter](https://twitter.com/home)
