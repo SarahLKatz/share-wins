@@ -8,7 +8,7 @@ Most important question: what is this project?
 If you have a win that you want the community to celebrate, you can input that win, and it will join the collection of wins that can be displayed on the site. Someday soon a user may see your win and celebrate with you!
 
 #### To-Do Items
-- [ ] Tests. Seriously, let's get some tests in here.
+- [ ] Tests. Seriously, let's get some more tests in here. Tests should go in the `src/__tests__/` folder
 - [ ] Hooking Up a Database. Because right now the only wins that can display are ones I hard-coded in, and inputted wins go nowhere. My plan was to hook it up to a Firebase real-time database, but I'm open to other ideas.
 - [ ] Additional Styling. This could be much prettier. Right now I'm using Material UI because I wanted styles *fast*, but if someone wants to scrap that and build the styles from scratch ... I'm cool with that.
 - [ ] Sanitizing input. Right now someone could DROP TABLE; this and I wouldn't notice. We should probably work on changing that. I'm not cool deploying this to the internets with this DROP TABLE; situation going on.

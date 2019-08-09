@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
-import WinCard from './components/WinCard';
-import AddWin from './components/AddWin';
+import { WinCard, AddWin } from './components/';
 import Button from '@material-ui/core/Button';
 import './App.css';
 
@@ -40,7 +39,7 @@ class App extends Component {
     return (
       <div className="container">
         <WinCard win={randomWin} />
-        <Button variant="contained" onClick={this.changeWin}>
+        <Button variant="contained" id="differentWin" onClick={this.changeWin}>
           Show A Different Win
         </Button>
         <AddWin />

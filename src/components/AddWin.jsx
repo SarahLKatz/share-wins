@@ -1,49 +1,54 @@
-import React, { useState } from 'react';
+import React, { Fragment, useState } from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
-// const useStyles = makeStyles({
-//   card: {
-//     width: '40vw',
-//     height: '40vh',
-//     maxWidth: 500,
-//     margin: '5vh auto',
-//     display: 'flex',
-//     flexDirection: 'column',
-//     justifyContent: 'space-between'
-//   },
-//   title: {
-//     fontSize: '1.5rem',
-//     textAlign: 'center',
-//   },
-//   text: {
-//     fontSize: '2rem',
-//     textAlign: 'center',
-//     margin: 'auto'
-//   }
-// });
+const useStyles = makeStyles(theme => ({
+  winCta: {
+    margin: '7vh auto 0 auto'
+  },
+  winForm: {
+    margin: '0 auto',
+    display: 'flex',
+    flexDirection: 'column'
+  },
+  textField: {
+    width: '30vw'
+  },
+  winButton: {
+    margin: '2vh auto'
+  }
+}));
 
 function AddWin() {
+  const { winCta, winForm, textField, winButton } = useStyles();
   const [win, setWin] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
     console.log('Win Inputted:', win);
+    setWin('');
   };
+
   return (
-    <form onSubmit={handleSubmit}>
-      <TextField
-        id="win"
-        label="win"
-        value={win}
-        onChange={e => setWin(e.target.value)}
-        type="text"
-        name="win"
-        margin="normal"
-        variant="outlined"
-      />
-      <Button type="submit">Add My Win</Button>
-    </form>
+    <Fragment>
+      <h3 className={winCta}>Want To Share Your Win With The World?</h3>
+      <form onSubmit={handleSubmit} className={winForm}>
+        <TextField
+          id="win"
+          label="Share Your Win"
+          className={textField}
+          value={win}
+          onChange={e => setWin(e.target.value)}
+          type="text"
+          name="win"
+          margin="normal"
+          variant="outlined"
+        />
+        <Button variant="contained" type="submit" className={winButton}>
+          Share My Win
+        </Button>
+      </form>
+    </Fragment>
   );
 }
 
