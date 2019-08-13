@@ -1,29 +1,44 @@
 import React, { Component } from 'react';
 import { WinCard, AddWin } from './components/';
 import Button from '@material-ui/core/Button';
+import * as firebase from 'firebase/app';
+import 'firebase/database';
 import './App.css';
+import firebaseConfig from './config';
 
 class App extends Component {
   constructor() {
     super();
+    firebase.initializeApp(firebaseConfig);
     this.state = {
       wins: [],
       randomWinNum: 0
     };
     this.changeWin = this.changeWin.bind(this);
+    this.saveWin = this.saveWin.bind(this);
   }
 
   componentDidMount() {
-    const wins = [
-      'I ate breakfast',
-      'I got a promotion',
-      'I starred in my school play'
-    ];
+    this.getWins();
     this.setState({
-      wins,
       randomWinNum: Math.floor(Math.random() * this.state.wins.length)
     });
   }
+
+  getWins = () => {
+    let ref = firebase.database().ref('/');
+    ref.on('value', snapshot => {
+      const value = snapshot.val();
+      if (value) this.setState({ wins: value });
+    });
+  };
+
+  saveWin = win => {
+    firebase
+      .database()
+      .ref('/')
+      .set([win, ...this.state.wins]);
+  };
 
   changeWin() {
     let newWinNum = this.state.randomWinNum;
@@ -42,7 +57,7 @@ class App extends Component {
         <Button variant="contained" id="differentWin" onClick={this.changeWin}>
           Show A Different Win
         </Button>
-        <AddWin />
+        <AddWin saveWin={this.saveWin} />
       </div>
     );
   }

@@ -20,11 +20,12 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function AddWin() {
+function AddWin({ saveWin }) {
   const { winCta, winForm, textField, winButton } = useStyles();
   const [win, setWin] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
+    saveWin(win);
     console.log('Win Inputted:', win);
     setWin('');
   };
