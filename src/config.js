@@ -1,5 +1,7 @@
+const apiKey = process.env.APIKEY;
+
 const firebaseConfig = {
-  apiKey: 'AIzaSyCBfgLGAwukmm3izaE6Let-X_GyKQCYzpE',
+  apiKey,
   authDomain: 'sharewins-7144c.firebaseapp.com',
   databaseURL: 'https://sharewins-7144c.firebaseio.com',
   projectId: 'sharewins-7144c',
