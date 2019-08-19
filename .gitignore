@@ -11,6 +11,11 @@
 # production
 /build
 
+# hosting
+/.firebase
+.firebasesrc
+firebase.json
+
 # misc
 .DS_Store
 .env.local
@@ -23,3 +28,4 @@ yarn-debug.log*
 yarn-error.log*
 
 secrets.js
+database.rules.json

@@ -24,11 +24,12 @@ const useStyles = makeStyles({
 });
 
 function WinCard({ win }) {
+  console.log('win!', win);
   const { card, title, text } = useStyles();
   return (
     <Card className={card}>
       <h3 className={title}>Someone's Awesome Win:</h3>
-      <span className={text}>{win}</span>
+      <span className={text}>{win && win.win ? win.win : win}</span>
     </Card>
   );
 }

@@ -12,7 +12,8 @@ class App extends Component {
     firebase.initializeApp(firebaseConfig);
     this.state = {
       wins: [],
-      randomWinNum: 0
+      randomWinNum: 0,
+      user: 'anonymous'
     };
     this.changeWin = this.changeWin.bind(this);
     this.saveWin = this.saveWin.bind(this);
@@ -29,7 +30,8 @@ class App extends Component {
     let ref = firebase.database().ref('/');
     ref.on('value', snapshot => {
       const value = snapshot.val();
-      if (value) this.setState({ wins: value });
+      console.log(value);
+      if (value) this.setState({ wins: Object.values(value) });
     });
   };
 
@@ -37,7 +39,10 @@ class App extends Component {
     firebase
       .database()
       .ref('/')
-      .set([win, ...this.state.wins]);
+      .push({
+        user: this.state.user,
+        win
+      });
   };
 
   changeWin() {
