@@ -4,9 +4,6 @@ import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 
 const useStyles = makeStyles(theme => ({
-  winCta: {
-    margin: '7vh auto 0 auto'
-  },
   winForm: {
     margin: '0 auto',
     display: 'flex',
@@ -20,8 +17,8 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
-function AddWin({ saveWin }) {
-  const { winCta, winForm, textField, winButton } = useStyles();
+function AddWin({ saveWin, twitter }) {
+  const { winForm, textField, winButton } = useStyles();
   const [win, setWin] = useState('');
   const handleSubmit = e => {
     e.preventDefault();
@@ -31,25 +28,23 @@ function AddWin({ saveWin }) {
   };
 
   return (
-    <Fragment>
-      <h3 className={winCta}>Want To Share Your Win With The World?</h3>
-      <form onSubmit={handleSubmit} className={winForm}>
-        <TextField
-          id="win"
-          label="Share Your Win"
-          className={textField}
-          value={win}
-          onChange={e => setWin(e.target.value)}
-          type="text"
-          name="win"
-          margin="normal"
-          variant="outlined"
-        />
-        <Button variant="contained" type="submit" className={winButton}>
-          Share My Win
-        </Button>
-      </form>
-    </Fragment>
+    <form onSubmit={handleSubmit} className={winForm}>
+      <span>Signed in as {twitter}</span>
+      <TextField
+        id="win"
+        label="Share Your Win"
+        className={textField}
+        value={win}
+        onChange={e => setWin(e.target.value)}
+        type="text"
+        name="win"
+        margin="normal"
+        variant="outlined"
+      />
+      <Button variant="contained" type="submit" className={winButton}>
+        Share My Win
+      </Button>
+    </form>
   );
 }
 

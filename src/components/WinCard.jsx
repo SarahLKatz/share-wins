@@ -24,7 +24,6 @@ const useStyles = makeStyles({
 });
 
 function WinCard({ win }) {
-  console.log('win!', win);
   const { card, title, text } = useStyles();
   return (
     <Card className={card}>
