@@ -27,3 +27,25 @@
   width: 20vw;
   margin: 0 auto;
 }
+
+.addWin {
+  margin: 0 auto;
+  text-align: center;
+}
+
+.signIn {
+  width: 45vw;
+}
+
+.signIn span {
+  display: block;
+  font-style: italic;
+  margin: min(1vh, 1vw);
+}
+
+#signInButton {
+  padding: 0;
+  border: none;
+  background: none;
+  margin: 0 auto;
+}

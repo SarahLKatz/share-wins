@@ -7,15 +7,17 @@ Most important question: what is this project?
 
 If you have a win that you want the community to celebrate, you can input that win, and it will join the collection of wins that can be displayed on the site. Someday soon a user may see your win and celebrate with you!
 
+Currently all users can view wins, but only logged in users (authentication via twitter) can add wins.
+
 #### To-Do Items
 - [ ] Tests. Seriously, let's get some more tests in here. Tests should go in the `src/__tests__/` folder
-- [ ] Hooking Up a Database. Because right now the only wins that can display are ones I hard-coded in, and inputted wins go nowhere. My plan was to hook it up to a Firebase real-time database, but I'm open to other ideas.
 - [ ] Additional Styling. This could be much prettier. Right now I'm using Material UI because I wanted styles *fast*, but if someone wants to scrap that and build the styles from scratch ... I'm cool with that.
-- [ ] Sanitizing input. Right now someone could DROP TABLE; this and I wouldn't notice. We should probably work on changing that. I'm not cool deploying this to the internets with this DROP TABLE; situation going on.
-- [ ] Deploying to the Internet. We should probably get most of the above done first, but ... I would like this to go live at some point.
+- [ ] Option to post with name. Right now, even once you're logged in, secrets post anonymously. I'd like to give users the option of associating either their twitter display name or their username with the secret. The anonymous option should still be there (and possibly also still be the default)
+
 ##### Possible Additional Features
-- [ ] Users? My initial idea was to have wins associated with users somehow, so that you can congratulate someone on their win, but then it seemed like too much work. Would be cool with someone introducing that if they want to do the work, but it would have to be early before we start putting all the anonymous wins out there (or we could do option of anonymous or submitted by user...)
-- [ ] Likes? Do we want to give people the ability to "like" wins? Not sure the point of this would be, because it's not like you'll see who liked your win (unless we set up users), but I dunno...
+- [ ] Additional Authentication Methods? Currently users can log in via Twitter, but nothing else. This is because I was getting scared of firebase rules and whatnot? My initial idea was to have wins associated with users somehow, so that you can congratulate someone on their win, but then it seemed like too much work. Would be cool with someone introducing that if they want to do the work, but it would have to be early before we start putting all the anonymous wins out there (or we could do option of anonymous or submitted by user...)
+- [ ] Database Integration Improvements? The app is currently hooked up to a Firebase Realtime Database. I think I'm handling everything okay, but I haven't used a firebase database in a while and I might not be using best practices integrating it into the app. So if anyone sees something with the database that could be done better, please feel free to put in a PR!
+- [ ] Likes? Do we want to give people the ability to "like" wins? Not sure the point of this would be, because it's not like you'll see who liked your win (unless we limit that to authenticated users), but I dunno...
 - [ ] Anything else you want to add
 
 #### About Contributing

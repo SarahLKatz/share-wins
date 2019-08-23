@@ -28,7 +28,7 @@ function WinCard({ win }) {
   return (
     <Card className={card}>
       <h3 className={title}>Someone's Awesome Win:</h3>
-      <span className={text}>{win}</span>
+      <span className={text}>{win && win.win ? win.win : win}</span>
     </Card>
   );
 }
