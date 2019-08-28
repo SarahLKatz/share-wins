@@ -43,10 +43,7 @@ class App extends Component {
     firebase
       .database()
       .ref('/')
-      .push({
-        user: this.state.user,
-        win
-      });
+      .push({ ...win });
   };
 
   signIn() {
@@ -55,7 +52,6 @@ class App extends Component {
       .auth()
       .signInWithPopup(provider)
       .then(result => {
-        console.log(result.user);
         const { displayName, photoURL } = result.user;
         const { username } = result.additionalUserInfo;
         this.setState({
@@ -83,7 +79,7 @@ class App extends Component {
   };
 
   render() {
-    const { wins, randomWinNum, twitter } = this.state;
+    const { wins, randomWinNum, twitter, user } = this.state;
     const randomWin = wins[randomWinNum];
     return (
       <div className="container">
@@ -94,7 +90,7 @@ class App extends Component {
         <div className="addWin">
           <h3 className="winCta">Want To Share Your Win With The World?</h3>
           {twitter ? (
-            <AddWin saveWin={this.saveWin} twitter={twitter} />
+            <AddWin saveWin={this.saveWin} twitter={twitter} user={user} />
           ) : (
             <div className="signIn">
               <button onClick={this.signIn} id="signInButton">
