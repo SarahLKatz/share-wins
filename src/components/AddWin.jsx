@@ -23,7 +23,8 @@ const useStyles = makeStyles(theme => ({
     flex: 1
   },
   textField: {
-    width: '30vw'
+    width: '30vw',
+    marginBottom: '3vh'
   },
   winButton: {
     margin: '2vh auto'
@@ -39,7 +40,7 @@ function AddWin({ saveWin, twitter, user }) {
   };
   const handleSubmit = e => {
     e.preventDefault();
-    saveWin({ win, postName });
+    saveWin({ win, postName, isTwitter: postName === twitter });
     setWin('');
     setPostName('anonymous');
   };

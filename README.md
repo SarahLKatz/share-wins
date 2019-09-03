@@ -3,16 +3,15 @@
 #### About This Project
 Most important question: what is this project?
 
-(Once the MVP is done and deployed) Share Wins is (/will be) a website that's all about sharing our wins with random internet strangers. When you visit the live site at (website will be included here once it's deployed and I decide if I want to buy a domain name for it), you will see a win that someone has anonymously submitted to the site, and you get the joy of celebrating that win!
+Share Wins is a website that's all about sharing our wins with random internet strangers. When you visit the live site at [https://sharewins-7144c.firebaseapp.com](https://sharewins-7144c.firebaseapp.com), you will see a win that someone has submitted to the site, and you get the joy of celebrating that win!
 
-If you have a win that you want the community to celebrate, you can input that win, and it will join the collection of wins that can be displayed on the site. Someday soon a user may see your win and celebrate with you!
+If you have a win that you want the community to celebrate, you can log in and input that win, and it will join the collection of wins that can be displayed on the site. Someday soon a user may see your win and celebrate with you!
 
 Currently all users can view wins, but only logged in users (authentication via twitter) can add wins.
 
 #### To-Do Items
 - [ ] Tests. Seriously, let's get some more tests in here. Tests should go in the `src/__tests__/` folder
 - [ ] Additional Styling. This could be much prettier. Right now I'm using Material UI because I wanted styles *fast*, but if someone wants to scrap that and build the styles from scratch ... I'm cool with that.
-- [ ] Option to post with name. Right now, even once you're logged in, secrets post anonymously. I'd like to give users the option of associating either their twitter display name or their username with the secret. The anonymous option should still be there (and possibly also still be the default)
 
 ##### Possible Additional Features
 - [ ] Additional Authentication Methods? Currently users can log in via Twitter, but nothing else. This is because I was getting scared of firebase rules and whatnot? My initial idea was to have wins associated with users somehow, so that you can congratulate someone on their win, but then it seemed like too much work. Would be cool with someone introducing that if they want to do the work, but it would have to be early before we start putting all the anonymous wins out there (or we could do option of anonymous or submitted by user...)
@@ -28,7 +27,7 @@ Once you have node installed, getting the app up and running to work on the repo
 1. Fork the repository
 2. Clone the repository to your local machine
 3. Install dependencies using `yarn` or `npm install` (I used yarn, so there's a `yarn.lock` but no `package-lock.json` ... so if you prefer npm, be aware of that)
-4. Run `npm start` to start the app!
+4. Run `npm start` (or `yarn start`) to start the app!
 
 Everything is currently written in JavaScript and React, and I'd like to keep it that way. If you want to contribute but those aren't really your jam, let me know and I'll see if we can find a way to get your contributions in without you having to learn a new language/framework or me having to convert work from another language to javascript.
 
