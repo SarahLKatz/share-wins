@@ -20,15 +20,30 @@ const useStyles = makeStyles({
     fontSize: '2rem',
     textAlign: 'center',
     margin: 'auto'
+  },
+  twitter: {
+    fontSize: '0.8rem',
+    padding: '0.5vh 0.5vw'
   }
 });
 
 function WinCard({ win }) {
-  const { card, title, text } = useStyles();
+  const { card, title, text, twitter } = useStyles();
   return (
     <Card className={card}>
-      <h3 className={title}>Someone's Awesome Win:</h3>
+      <h3 className={title}>
+        {win && win.postName && win.postName !== 'anonymous'
+          ? `${win.postName}'s`
+          : `Someone's`}{' '}
+        Awesome Win:
+      </h3>
       <span className={text}>{win && win.win ? win.win : win}</span>
+      {win && win.isTwitter && (
+        <span className={twitter}>
+          Want to help @{win.postName} celebrate? Share your congratulations{' '}
+          <a href={`https://twitter.com/${win.postName}`}>on Twitter!</a>
+        </span>
+      ) /*CSS ME!*/}
     </Card>
   );
 }
